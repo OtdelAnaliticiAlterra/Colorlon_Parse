@@ -3,13 +3,11 @@ import asyncio
 from selectolax.parser import HTMLParser
 import time
 import pandas as pd
-import openpyxl
 import os
 from dotenv import load_dotenv, find_dotenv
 from telegram_bot_logger import TgLogger
 from pathlib import Path
-#
-#
+
 BASE_DIR = Path(__file__).resolve().parent
 
 load_dotenv(find_dotenv())
@@ -185,8 +183,8 @@ async def main():
 
 
 if __name__ == "__main__":
-    # try:
+    try:
         asyncio.run(main())
-    # except Exception as e:
-    #     logger.error(e)
-    #     raise e
+    except Exception as e:
+        logger.error(e)
+        raise e
